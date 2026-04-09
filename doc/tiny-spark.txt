@@ -1,0 +1,40 @@
+*tiny-spark.txt*  Cursor jump flash animation
+
+Author: Stephen Waits <https://github.com/swaits>
+License: MIT
+
+==============================================================================
+CONTENTS                                          *tiny-spark-contents*
+
+  1. Introduction ............................ |tiny-spark-introduction|
+  2. Configuration ........................... |tiny-spark-configuration|
+
+==============================================================================
+1. INTRODUCTION                                *tiny-spark-introduction*
+
+tiny-spark.nvim flashes a brief highlight at the cursor position after
+large jumps, making it easy for your eye to follow the cursor.
+
+==============================================================================
+2. CONFIGURATION                              *tiny-spark-configuration*
+
+                                                  *tiny-spark.setup()*
+setup({opts})
+
+    Optional. All options shown with defaults: >lua
+
+        require("tiny-spark").setup({
+          threshold = 5,     -- minimum line distance to trigger
+          duration = 150,    -- fade duration in ms
+          width = 8,         -- flash width in columns
+          hl = "CurSearch",  -- highlight group
+        })
+<
+    Fields: ~
+      {threshold}  (number) Minimum line jump to trigger flash. Default: 5
+      {duration}   (number) Fade-out duration in milliseconds. Default: 150
+      {width}      (number) Width of flash in columns. Default: 8
+      {hl}         (string) Highlight group. Default: "CurSearch"
+
+==============================================================================
+vim:tw=78:ts=8:ft=help:norl:
